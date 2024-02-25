@@ -1,0 +1,118 @@
+{
+	"info": {
+		"_postman_id": "3718cc07-997e-4de7-97e4-73e050c7c89b",
+		"name": "Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "33151138"
+	},
+	"item": [
+		{
+			"name": "Test GET",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:3000/api/hello"
+			},
+			"response": []
+		},
+		{
+			"name": "Test POST message",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"message\":\"Ooookay let's go!\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/echo"
+			},
+			"response": []
+		},
+		{
+			"name": "Add users",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "// {\r\n//     \"id\": 1,\r\n//     \"username\": \"Egor\",\r\n//     \"email\": \"em12432@sdadda.com\",\r\n//     \"password\": \"12345\"\r\n// }\r\n\r\n{\r\n    \"id\": 2,\r\n    \"username\": \"Anton\",\r\n    \"email\": \"an12432@sdadda.com\",\r\n    \"password\": \"12345\"\r\n}\r\n\r\n// {\r\n//     \"id\": 3,\r\n//     \"username\": \"Sergey\",\r\n//     \"email\": \"ser12432@sdadda.com\",\r\n//     \"password\": \"12345\"\r\n// }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/users"
+			},
+			"response": []
+		},
+		{
+			"name": "Get users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:3000/api/users"
+			},
+			"response": []
+		},
+		{
+			"name": "Get one user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:3000/api/users/3"
+			},
+			"response": []
+		},
+		{
+			"name": "Put user",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"SerrrrrGey\",\r\n    \"email\": \"ser12432@sdadda.com\",\r\n    \"password\": \"12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/users/3"
+			},
+			"response": []
+		},
+		{
+			"name": "Patch password",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"password\": \"54321\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/users/3"
+			},
+			"response": []
+		},
+		{
+			"name": "delete user",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:3000/api/users/1"
+			},
+			"response": []
+		}
+	]
+}
