@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
-const PORT = 3000;
+require('dotenv').config();
+const PORT = process.env.MY_PORT;
 app.use(express.json())
 
 const users = [];
@@ -15,7 +16,7 @@ app.post('/api/echo', (req, res) => {
 })
 
 app.post('/api/users', (req, res) => {
-    let { id, username, email, password } = req.body;
+    const { id, username, email, password } = req.body;
     users.push({ id, username, email, password });
     res.send(`Пользователь ${username} -> создан!`)
 })
