@@ -24,16 +24,7 @@ class UserControllers {
     }
 
     deleteUser(req, res) {
-        // const userId = parseInt(req.params.id);
-        // const userIndex = users.findIndex((user) => user.id === userId);
-
-        // if (userIndex === -1) {
-        //     return res.send("Пользователь не найден!");
-        // }
-
-        // users.splice(userIndex, 1)
-        // res.send("Пользователь был удален");
-        console.log('delete');
+        res.send(UserServices.deleteUser(parseInt(req.params.id)));
     }
 }
 

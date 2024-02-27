@@ -5,12 +5,10 @@ const PORT = process.env.MY_PORT;
 app.use(express.json())
 
 const router = require('./routes');
+const logger = require('./helpers/logger');
 app.use('/api', router)
 
-// function logger(req, res, next) {
-//     console.log(`Запрос на ${req.url}`)
-//     next();
-// }
+app.use(logger)
 
 app.listen(PORT, () => {
     console.log(`http://localhost:${PORT}`);

@@ -38,6 +38,16 @@ class UserServices {
         return `Пароль пользователя обновлен!`
     }
 
+    deleteUser(userId){
+        const userIndex = this.#user.findIndex((item) => item.id === userId);
+
+        if (userIndex === -1) {
+            return "Пользователь не найден!";
+        }
+
+        this.#user.splice(userIndex, 1);
+        return `Пользователь был удален`;
+    }
 
 }
 
