@@ -4,8 +4,8 @@ class startControllers {
     }
 
     getEcho(req, res) {
-        const message = req.body.message;
-        res.json({ echo: message });
+        const {message} = req.body;
+        res.send(message);
     }
 }
 

@@ -15,26 +15,24 @@ class UserServices {
     }
 
     editUser(data, userId) {
-        const result = this.#user.find((item) => item.id === userId);
+        const index = this.#user.findIndex((item) => item.id === userId);
 
-        if (!result) {
+        if (!this.#user[index]) {
             return `Пользователь не найден!`;
         }
 
-        result.username = data.username || result.username;
-        result.email = data.email || result.email;
-        result.password = data.password || result.password;
+        this.#user[index] = {id: userId, ...data};
         return `Информация о пользователе обновлена!`;
     }
 
     editPassword(data, userId) {
-        const result = this.#user.find((item) => item.id === userId);
+        const index = this.#user.findIndex((item) => item.id === userId);
 
-        if (!result) {
+        if (!this.#user[index]) {
             return `Пользователь не найден!`;
         }
 
-        result.password = data.password || result.password;
+        this.#user[index].password = data.password;
         return `Пароль пользователя обновлен!`
     }
 
