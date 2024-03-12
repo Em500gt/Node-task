@@ -1,0 +1,17 @@
+{
+  "users": [
+    {
+      "id": 3,
+      "username": "Sergey",
+      "email": "ser12432@sdadda.com",
+      "password": "12345"
+    },
+    {
+      "id": 1,
+      "username": "Egor",
+      "email": "em12432@sdadda.com",
+      "password": "12345"
+    }
+  ],
+  "books": []
+}
