@@ -8,7 +8,7 @@ router.route('/')
 
 router.route('/:id')
     .get(UserControllers.getUserId)
-    .put(UserControllers.updateUser);
-//     .delete();
+    .put(UserControllers.updateUser)
+    .delete(UserControllers.deleteUser);
 
 module.exports = router;

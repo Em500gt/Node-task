@@ -1,40 +1,40 @@
 const FileHelper = require('../helpers/fileHelper');
-class UserService {
+class BookService {
 
-    getUser() {
+    getBook() {
         return FileHelper.readFile('data.json');
     }
 
-    async createUser(body) {
+    async createBook(body) {
         const myData = await FileHelper.readFile('data.json');
-        myData.users.push(body);
+        myData.books.push(body);
         await FileHelper.writeFile('data.json', myData);
     }
 
-    async getUserId(userId) {
+    async getBookId(bookId) {
         const result = await FileHelper.readFile('data.json');
-        return result.users.find((item) => item.id === userId);
+        return result.books.find((item) => item.id === bookId);
     }
 
-    async updateUser(data, userId) {
+    async updateBook(data, bookId) {
         const myData = await FileHelper.readFile('data.json');
-        const index = myData.users.findIndex((item) => item.id === userId);
+        const index = myData.books.findIndex((item) => item.id === bookId);
         if (index === -1) {
             return Promise.reject();
         }
-        myData.users[index] = { id: userId, ...data };
+        myData.books[index] = { id: bookId, ...data };
         await FileHelper.writeFile('data.json', myData);
     }
 
-    async deleteUser(userId) {
+    async deleteBook(bookId) {
         const myData = await FileHelper.readFile('data.json');
-        const index = myData.users.findIndex((item) => item.id === userId);
+        const index = myData.books.findIndex((item) => item.id === bookId);
         if (index === -1) {
             return Promise.reject();
         }
-        myData.users.splice(index, 1);
+        myData.books.splice(index, 1);
         await FileHelper.writeFile('data.json', myData);
     }
 }
 
-module.exports = new UserService();
+module.exports = new BookService();

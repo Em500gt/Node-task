@@ -22,6 +22,7 @@ class FileHelper {
                     console.error(err);
                     rej(err)
                 }
+                res();
             })
         })
 

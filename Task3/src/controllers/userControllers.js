@@ -11,14 +11,23 @@ class UserControllers {
         res.send(result.users);
     };
 
-    async getUserId(req, res){
+    async getUserId(req, res) {
         const result = await UserService.getUserId(parseInt(req.params.id));
-        result ? res.send(result) : res.send("Пользователь по данному ID не найден!")
+        result ? res.send(result) : res.send("Пользователь по данному ID не найден!");
     }
 
-    async updateUser(req, res){
-        res.send(UserService.updateUser(req.body, parseInt(req.params.id)));
+    async updateUser(req, res) {
+        await UserService.updateUser(req.body, parseInt(req.params.id))
+            .then(() => res.send("Данные записаны успешно"))
+            .catch(() => res.send("Пользователь не найден"));
     }
+
+    async deleteUser(req, res) {
+        await UserService.deleteUser(parseInt(req.params.id))
+            .then(() => res.send("Пользователь удален"))
+            .catch(() => res.send("Пользователь не найден"));
+    }
+
 }
 
 module.exports = new UserControllers();

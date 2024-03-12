@@ -1,17 +1,30 @@
 {
   "users": [
     {
-      "id": 3,
-      "username": "Sergey",
-      "email": "ser12432@sdadda.com",
-      "password": "12345"
-    },
-    {
       "id": 1,
       "username": "Egor",
       "email": "em12432@sdadda.com",
       "password": "12345"
+    },
+    {
+      "id": 2,
+      "username": "SerrrrrGey",
+      "email": "ser12432@sdadda.com",
+      "password": "12345"
     }
   ],
-  "books": []
+  "books": [
+    {
+      "id": 1,
+      "bookName": "War and Peace",
+      "author": "Leo Tolstoy",
+      "pages": "1300"
+    },
+    {
+      "id": 2,
+      "bookName": "The Pilgrim's Progress",
+      "author": "John Bunyan",
+      "pages": "326"
+    }
+  ]
 }
