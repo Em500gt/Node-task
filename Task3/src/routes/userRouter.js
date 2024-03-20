@@ -2,13 +2,17 @@ const express = require('express');
 const router = express.Router();
 const UserControllers = require('../controllers/userControllers');
 
+const Validation = require('../helpers/validation');
+
+router.get('/hello', Validation.helloUser(), UserControllers.hello);
+
 router.route('/')
-    .post(UserControllers.createUser)
-    .get(UserControllers.getAllUser);
+    .post(Validation.validData(), UserControllers.createUser)
+    .get(Validation.validHeader(), UserControllers.getAllUser);
 
 router.route('/:id')
-    .get(UserControllers.getUserId)
-    .put(UserControllers.updateUser)
-    .delete(UserControllers.deleteUser);
+    .get(Validation.validID(), UserControllers.getUserId)
+    .put(Validation.validID(), Validation.validData(), UserControllers.updateUser)
+    .delete(Validation.validID(), UserControllers.deleteUser);
 
 module.exports = router;
